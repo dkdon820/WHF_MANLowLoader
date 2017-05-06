@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="35">
+    <author>Desperados93</author>
+    <version>1.1.0.2</version>
+    <iconFilename>icon_tieflader.dds</iconFilename>
+    <storeItems>
+        <storeItem rootNode="vehicle" xmlFilename="tieflader.xml"/>
+    </storeItems>
+    <multiplayer supported="true" />
+    <title>
+        <de>Flachbett Tieflader</de>
+        <en>Flatbed Low Loader</en>
+        <fr>Surbaissée à Plat</fr>
+        <pl>Platforma Niskopodwoziowa</pl>
+    </title>
+    <description>
+        <de><![CDATA[Das ist ein Flachbett Tieflader. Mit diesem kann man Fahrzeuge und Ballen transportieren
+Preis: 11.500,- €
+Länge: 15 m
+Wartungskosten: 10,- € / Tag
+
+Changelog:
+-Ballen werden nun korrekt festgehalten
+-lightmap angepasst
+]]>
+        </de>
+        <en><![CDATA[This is a flatbed low loader. With this you can transport vehicles and bales.
+Price: 11.500,- €
+Length: 15 m
+Maintenance: 10,- € / day
+
+Changelog:
+-Bales are now properly held
+-fix lightmap]]>
+        </en>
+        <fr><![CDATA[Ceci est une remorque à plate-forme. Avec celui-ci peut transporter des véhicules et des balles
+Price: 11.500,- €
+Length: 15 m
+Maintenance: 10,- € / day
+
+Changelog:
+-Bales sont maintenant tenus correctement
+-fix lightmap]]>
+        </fr>
+        <pl><![CDATA[Jest to przyczepa Platforma. Z tym jednym może transportować pojazdy i bele.
+Price: 11.500,- €
+Length: 15 m
+Maintenance: 10,- € / day
+
+Changelog:
+Bele są obecnie odbywają się prawidłowo
+-fix lightmap]]>
+        </pl>
+    </description>
+
+
+    <l10n>
+        <text name="functionFold">
+            <en>Remove the ramps</en>
+            <de>Rampen abbauen</de>
+            <fr>Retirer les rampes</fr>
+            <pl>Usuń rampy</pl>
+        </text>
+        <text name="functionUnfold">
+            <en>Install the ramps</en>
+            <de>Rampen anbauen</de>
+            <fr>l'installation de rampes</fr>
+            <pl>zainstalowanie rampy</pl>
+        </text>
+    </l10n>
+
+</modDesc>

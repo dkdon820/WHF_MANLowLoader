@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="tieflader" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="7.0.5"/>
+  </Asset>
+
+  <Files>
+    <File fileId="10" filename="shaders/emissiveLightsShader.xml" relativePath="true"/>
+    <File fileId="6" filename="shaders/vehicleShader.xml" relativePath="true"/>
+    <File fileId="13" filename="shared/coronaOrange_diffuse.png" relativePath="true"/>
+    <File fileId="9" filename="shared/coronaRed_diffuse.png" relativePath="true"/>
+    <File fileId="11" filename="shared/coronaWhite_diffuse.png" relativePath="true"/>
+    <File fileId="5" filename="shared/default_cube.dds" relativePath="true"/>
+    <File fileId="12" filename="shared/lightPattern/circle1_diffuse.png" relativePath="true"/>
+    <File fileId="2" filename="textures/tiefladerNEW_diffuse.dds" relativePath="true"/>
+    <File fileId="3" filename="textures/tieflader_normal.dds" relativePath="true"/>
+    <File fileId="4" filename="textures/tieflader_specular.dds" relativePath="true"/>
+    <File fileId="8" filename="textures/woodPlanksLowTrailer.dds" relativePath="true"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="tieflader" materialId="10" ambientColor="1 1 1" cosPower="20" specularColor="1 1 1" customShaderId="6">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Reflectionmap fileId="5" lodDistanceScaling="0.5" viewDistanceScaling="0.5" type="cube" scaling="1" refractiveIndex="1" bumpScale="0.5" shapesObjectMask="4294967295" lightsObjectMask="4294967295"/>
+      <CustomParameter name="RDT" value="1 0 20 20"/>
+    </Material>
+    <Material name="selfIllumSL_mat" materialId="7" ambientColor="1 1 1" alphaBlending="true" customShaderId="10" customShaderVariation="STATIC_LIGHT_PATTERN">
+      <Emissivemap fileId="12"/>
+      <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+    </Material>
+    <Material name="selfIllumTL_mat" materialId="12" ambientColor="1 1 1" alphaBlending="true" customShaderId="10" customShaderVariation="STATIC_TURNLIGHT_PATTERN">
+      <Emissivemap fileId="12"/>
+      <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+    </Material>
+    <Material name="coronaOrange_mat" materialId="14" ambientColor="1 1 1" alphaBlending="true" customShaderId="10" customShaderVariation="BILLBOARD_TURNLIGHT">
+      <Emissivemap fileId="13"/>
+      <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+    </Material>
+    <Material name="woodPlanks" materialId="15" ambientColor="1 1 1">
+      <Texture fileId="8"/>
+    </Material>
+    <Material name="coronaRed_mat" materialId="13" ambientColor="1 1 1" alphaBlending="true" customShaderId="10" customShaderVariation="BILLBOARD">
+      <Emissivemap fileId="9"/>
+      <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+    </Material>
+    <Material name="coronaWhite_mat" materialId="11" ambientColor="1 1 1" alphaBlending="true" customShaderId="10" customShaderVariation="BILLBOARD">
+      <Emissivemap fileId="11"/>
+      <CustomParameter name="blinkOffset" value="0 0 0 0"/>
+    </Material>
+    <Material name="lambert1" materialId="8" diffuseColor="1 1 1 1" ambientColor="1 1 1" cosPower="20" specularColor="1 1 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="Tieflader.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <Shape shapeId="1" name="Tieflader" rotation="0 180 0" dynamic="true" compound="true" collisionMask="2105410" density="0.7" clipDistance="750" nodeId="39" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true" distanceBlending="false">
+      <TransformGroup name="rightFirst" translation="1.033 0.418 1.19658" nodeId="40"/>
+      <TransformGroup name="rightSecond" translation="1.033 0.41816 2.41747" nodeId="41"/>
+      <TransformGroup name="rightThird" translation="1.033 0.4 3.64426" nodeId="42"/>
+      <TransformGroup name="leftFirst" translation="-1.033 0.418 1.19658" nodeId="43"/>
+      <TransformGroup name="leftSecond" translation="-1.033 0.418 2.41747" nodeId="44"/>
+      <TransformGroup name="leftThird" translation="-1.033 0.4 3.64426" nodeId="45"/>
+      <TransformGroup name="attacher" translation="0 1.35836 -8.0893" rotation="0 -90 0" nodeId="46"/>
+      <Shape shapeId="2" name="support" clipDistance="250" nodeId="47" materialIds="10" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="3" name="supportCol" translation="0 0.068 -4.78449" compoundChild="true" collisionMask="8194" clipDistance="250" nodeId="48" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      </Shape>
+      <TransformGroup name="rampJoint" translation="0 0.942849 6.06493" nodeId="49"/>
+      <TransformGroup name="ramp" nodeId="50">
+        <TransformGroup name="transform" translation="-0.899 0.448 -3.766" nodeId="51">
+          <Shape shapeId="4" name="ramp1" rotation="-13.43 0 0" scale="1.255 1 1" kinematic="true" collisionMask="8194" clipDistance="250" nodeId="52" materialIds="10" castsShadows="true" receiveShadows="true" nonRenderable="true">
+            <Shape shapeId="4" name="ramp1" translation="9.11859e-09 0.030403 -0.127323" scale="1.5 1 1" clipDistance="250" nodeId="53" materialIds="10" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="5" name="pCube1" translation="0.00375357 -1.14686 3.76888" clipDistance="100" nodeId="54" materialIds="15" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="transform" translation="0.899 0.448 -3.766" nodeId="55">
+          <Shape shapeId="4" name="ramp1" rotation="-13.43 0 0" scale="1.255 1 1" kinematic="true" collisionMask="8194" clipDistance="250" nodeId="56" materialIds="10" castsShadows="true" receiveShadows="true" nonRenderable="true">
+            <Shape shapeId="4" name="ramp1" translation="9.22235e-09 0.0307489 -0.128771" scale="1.5 1 1" clipDistance="250" nodeId="57" materialIds="10" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="5" name="pCube1" translation="0.00375357 -1.14686 3.76888" clipDistance="100" nodeId="58" materialIds="15" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="6" name="dynamicMountAttacher" translation="3.55271e-15 1.42457 5.55113" kinematic="true" compound="true" trigger="true" collisionMask="83894272" clipDistance="250" nodeId="59" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      <TransformGroup name="tensionBelts" translation="1.26096 1.043 1.71141" nodeId="60">
+        <TransformGroup name="beltStart2" translation="-2.596 0.741013 -9.17549" rotation="0 90 0" nodeId="61">
+          <TransformGroup name="beltEnd2" translation="5.68434e-16 5.68434e-16 2.68" nodeId="62"/>
+        </TransformGroup>
+        <TransformGroup name="beltStart2" translation="-2.596 0.741013 -7.11136" rotation="0 90 0" nodeId="63">
+          <TransformGroup name="beltEnd2" translation="5.68434e-16 5.68434e-16 2.68" nodeId="64"/>
+        </TransformGroup>
+        <TransformGroup name="beltStart2" translation="-2.59973 -0.082985 -4.95092" rotation="-0 90 0" nodeId="65">
+          <TransformGroup name="beltEnd2" translation="5.68434e-16 5.68434e-16 2.68" nodeId="66"/>
+        </TransformGroup>
+        <TransformGroup name="beltStart2" translation="-2.59973 -0.082985 -2.96768" rotation="-0 90 0" nodeId="67">
+          <TransformGroup name="beltEnd2" translation="5.68434e-16 5.68434e-16 2.68" nodeId="68"/>
+        </TransformGroup>
+        <TransformGroup name="beltStart2" translation="-2.59973 -0.082985 -1.1018" rotation="-0 90 0" nodeId="69">
+          <TransformGroup name="beltEnd2" translation="5.68434e-16 5.68434e-16 2.68" nodeId="70"/>
+        </TransformGroup>
+        <TransformGroup name="beltStart2" translation="-2.59973 -0.082985 0.837018" rotation="-0 90 0" nodeId="71">
+          <TransformGroup name="beltEnd2" translation="5.68434e-16 5.68434e-16 2.68" nodeId="72"/>
+        </TransformGroup>
+        <TransformGroup name="beltStart2" translation="-2.59973 -0.082985 3.0402" rotation="-0 90 0" nodeId="73">
+          <TransformGroup name="beltEnd2" translation="5.68434e-16 5.68434e-16 2.68" nodeId="74"/>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="7" name="Tieflader_vis" clipDistance="500" nodeId="75" materialIds="10" castsShadows="true" receiveShadows="true">
+        <TransformGroup name="lights" translation="5.30987e-08 0.086 -0.128301" rotation="0 180 0" nodeId="76">
+          <TransformGroup name="backLights" translation="0 -0.422852 0.151837" nodeId="77">
+            <TransformGroup name="coronas" nodeId="78">
+              <Shape shapeId="8" name="coronaBackRight3" translation="-1.26051 1.07257 -6.38864" rotation="180 -5.00896e-06 180" clipDistance="200" nodeId="79" materialIds="13"/>
+              <Shape shapeId="8" name="coronaBackRight4" translation="-1.45934 1.15962 -6.28156" clipDistance="200" nodeId="80" materialIds="11"/>
+              <Shape shapeId="8" name="coronaBackRight1" translation="1.25782 1.07409 -6.38864" rotation="180 -5.00896e-06 180" clipDistance="200" nodeId="81" materialIds="13"/>
+              <Shape shapeId="8" name="coronaBackRight2" translation="1.47598 1.16198 -6.30013" clipDistance="200" nodeId="82" materialIds="11"/>
+              <Shape shapeId="9" name="lightStatic" translation="0 1.11698 -6.33326" scale="1.14 0.92045 0.764839" clipDistance="35" nodeId="83" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            </TransformGroup>
+            <Light name="backLightsHigh" translation="0.981508 1.138 -6.50001" rotation="-15 0 0" clipDistance="75" nodeId="84" type="spot" color="0.5 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2.5" coneAngle="120" dropOff="2">
+              <Light name="backLightsHigh1" translation="-1.96351 0 -1.13687e-15" rotation="1.59028e-15 0 0" clipDistance="75" nodeId="85" type="spot" color="0.5 0 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="2.5" coneAngle="120" dropOff="2"/>
+            </Light>
+          </TransformGroup>
+          <TransformGroup name="turnLights" translation="0 -0.477803 0.173663" nodeId="86">
+            <TransformGroup name="turnLeft" nodeId="87">
+              <TransformGroup name="coronas" nodeId="88">
+                <Shape shapeId="10" name="turnLeftStatic" translation="1.25168 1.17795 -6.37919" clipDistance="35" nodeId="89" materialIds="12" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+                <Shape shapeId="11" name="turnLightRight3" translation="1.24493 1.17813 -6.38269" rotation="180 -5.00896e-06 180" clipDistance="200" nodeId="90" materialIds="14"/>
+              </TransformGroup>
+              <Light name="turnLightLeftBack" translation="1.082 1.17118 -6.38725" rotation="-8 -5 0" clipDistance="75" nodeId="91" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4" coneAngle="140" dropOff="3"/>
+            </TransformGroup>
+            <TransformGroup name="turnRight" nodeId="92">
+              <TransformGroup name="coronas" nodeId="93">
+                <Shape shapeId="12" name="turnRightStatic" translation="-0.169388 0.147545 9.09495e-15" clipDistance="35" nodeId="94" materialIds="12" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+                <Shape shapeId="13" name="turnLightRight2" translation="-1.25273 1.18274 -6.38269" rotation="180 -5.00896e-06 180" clipDistance="200" nodeId="95" materialIds="14"/>
+              </TransformGroup>
+              <Light name="turnLightRightBack" translation="-1.08201 1.17118 -6.387" rotation="-8 5 0" clipDistance="75" nodeId="96" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" decayRate="1" range="4" coneAngle="140" dropOff="3"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="brakeLights" translation="0 -0.364711 0" nodeId="97">
+            <TransformGroup name="coronas" nodeId="98">
+              <Shape shapeId="14" name="coronaFrontLeft20" translation="-1.0413 1.00423 -6.21052" rotation="180 -5.00896e-06 180" clipDistance="200" nodeId="99" materialIds="13"/>
+              <Shape shapeId="15" name="brakeStatic" translation="0 1.00559 -6.20702" scale="1.221 1 1" clipDistance="35" nodeId="100" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+              <Shape shapeId="14" name="coronaFrontLeft25" translation="1.05653 1.00557 -6.21052" rotation="180 -5.00896e-06 180" clipDistance="200" nodeId="101" materialIds="13"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="beaconLights" nodeId="102">
+            <TransformGroup name="beaconLight" translation="-0.87512 0.663 -6.03767" rotation="1.22133e-12 2.01011e-12 -180" nodeId="103"/>
+            <TransformGroup name="beaconLight" translation="0.875 0.663 -6.03767" rotation="1.22133e-12 2.01011e-12 -180" nodeId="104"/>
+          </TransformGroup>
+          <TransformGroup name="reverseLights" nodeId="105">
+            <TransformGroup name="coronas" nodeId="106">
+              <Shape shapeId="16" name="coronaFrontLeft22" translation="-1.05698 0.698367 -6.22353" rotation="-180 -5.00896e-06 -180" clipDistance="200" nodeId="107" materialIds="11"/>
+              <Shape shapeId="16" name="coronaFrontLeft21" translation="1.07578 0.696789 -6.21063" rotation="180 -5.00896e-06 180" clipDistance="200" nodeId="108" materialIds="11"/>
+              <Shape shapeId="17" name="reverseStatic" translation="0 0.69647 -6.20713" scale="1.21 1 1" clipDistance="35" nodeId="109" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+            </TransformGroup>
+            <Light name="reverseLight" translation="0 0.959304 -6.33201" rotation="-15 0 0" clipDistance="75" nodeId="110" type="spot" color="0.9 0.9 1" emitDiffuse="true" emitSpecular="true" decayRate="1" range="5" coneAngle="150" dropOff="3"/>
+          </TransformGroup>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="18" name="addColl" translation="-1.02263 0.922403 0.736633" compoundChild="true" collisionMask="8194" clipDistance="250" nodeId="111" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      <Shape shapeId="19" name="addColl1" translation="1.023 0.922425 0.739304" compoundChild="true" collisionMask="8194" clipDistance="250" nodeId="112" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      <Shape shapeId="20" name="addColl2" translation="0 1.67393 -6.73337" compoundChild="true" collisionMask="8194" clipDistance="250" nodeId="113" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      <Shape shapeId="21" name="addColl3" translation="0 1.42186 -4.67643" compoundChild="true" collisionMask="8194" clipDistance="250" nodeId="114" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      <Shape shapeId="22" name="addColl4" translation="0 2.27 -9.01" compoundChild="true" collisionMask="8194" clipDistance="250" nodeId="115" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+    </Shape>
+  </Scene>
+
+</i3D>
